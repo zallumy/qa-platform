@@ -1,0 +1,19 @@
+# Python
+backend/__pycache__/
+backend/**/__pycache__/
+backend/.venv/
+*.pyc
+
+# Node / Next.js
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+
+# Env files — never commit real secrets
+.env
+*.env.local
+
+# Editors / OS
+.DS_Store
+.vscode/
+.idea/
