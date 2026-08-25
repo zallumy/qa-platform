@@ -77,6 +77,13 @@ npm run dev
 You'll still need Postgres, Redis, and MinIO running somewhere reachable — the simplest way is
 `docker compose up postgres redis minio`.
 
+## Production deployment
+
+`docker-compose.prod.yml` + `deploy/Caddyfile` deploy the same stack behind Caddy (automatic
+HTTPS), with Postgres/Redis/MinIO kept off the public internet — only Caddy publishes ports
+80/443. See the step-by-step deployment walkthrough for provisioning a server, DNS, and running
+this in production.
+
 ## Notable design decisions / limitations (v1)
 
 - **First-page-only analysis for PDFs.** A multi-page PDF is analyzed using its first page as

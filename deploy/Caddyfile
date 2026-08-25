@@ -1,0 +1,17 @@
+# Caddy reverse proxy — automatic HTTPS via Let's Encrypt.
+# Replace the two domains below with your real ones before deploying.
+
+yourdomain.com {
+    reverse_proxy frontend:3000
+}
+
+api.yourdomain.com {
+    reverse_proxy api:8000
+}
+
+# Only needed if you're self-hosting MinIO in production instead of using
+# real S3 (see docker-compose.prod.yml). Presigned download URLs need a
+# public, browser-reachable endpoint — this subdomain provides that.
+# s3.yourdomain.com {
+#     reverse_proxy minio:9000
+# }
